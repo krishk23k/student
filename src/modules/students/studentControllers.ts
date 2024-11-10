@@ -129,7 +129,7 @@ export class studentController {
     //         console.log(">>>>>     STUDENT UPDATE CONTROLLER    <<<<<");
     //         res.status(400).json(error);
     //     }
-    // }
+    // }d
 
     public login = async (req: Request, res: Response) => {
         try {
@@ -190,6 +190,23 @@ export class studentController {
         catch(error){
             console.log(">>>>>     FIND_ALL CONTROLLER    <<<<<" , error);
             res.status(400).json(error);
+        }
+    }
+    
+    public deleteUser = async(req:Request , res:Response)=>{
+        try{
+            const{_id}=req.body;
+
+            const data = {
+                _id:_id
+            }
+
+            const result = await this.studentUtils.deleteStudents(data);
+            res.status(200).json({Message:"Student successfully delete"});
+        }
+        catch(error){
+            console.log(">>>>>     DELETE STUDENT CONTROLLER     <<<<<" , error);
+            res.status(500).json({Message:"unsuccessful Event"})
         }
     }
 }
