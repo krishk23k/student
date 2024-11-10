@@ -11,7 +11,7 @@
     "dev": "npx tsc",
     "start": "npx nodemon dist/index.js"
   },
-  "author": "",
+  "author": "RAJESH GURJAR",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",

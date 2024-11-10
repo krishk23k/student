@@ -99,4 +99,24 @@ export class middleware{
             res.status(400).json(error);
         }
     }
+
+    public deleteStudents = async(req:Request , res:Response , next:NextFunction)=>{
+        try{
+            const{_id}= req.body;
+
+            const data = await student_model.findOne(
+                    {_id:_id}
+            );
+
+            if(!data){
+                res.status(404).json({Message:"User Not Found"});
+            }
+
+            next();
+        }
+        catch(err){
+            console.log(">>>>>     DELETE STUDENT MIDDLEWARE     <<<<<",err);
+            res.status(500).json({Message:"Error occured"})
+        }
+    }
 }

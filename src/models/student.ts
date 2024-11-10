@@ -92,6 +92,10 @@ let student_schema = new mongoose.Schema({
     semester:{
         type:mongoose.Schema.Types.String,
         required:true
+    },
+    is_delete:{
+        type:mongoose.Schema.Types.Boolean,
+        default:false
     }
 },
     {

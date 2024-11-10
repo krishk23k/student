@@ -93,5 +93,11 @@ export class studentUtils {
         return result;
     }
 
+    public deleteStudents = async(data:any)=>{
+        const result = await student_model.deleteOne({_id:data._id});
+        return result;
+
+    }
+
 
 }
