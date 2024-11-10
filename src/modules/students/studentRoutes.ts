@@ -32,4 +32,10 @@ const find_all = [
 ]
 router.get('/get' , find_all)
 
+const deleteStudent = [
+    Middleware.deleteStudents,
+    Student.deleteUser
+]
+router.delete('/delete',deleteStudent)
+
 export const studentRouter : Router = router
